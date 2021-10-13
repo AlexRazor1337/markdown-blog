@@ -1,6 +1,7 @@
 const showdown = require('showdown');
 showdown.setOption('strikethrough', true);
 const fs = require('fs')
+const showdownHighlight = require('showdown-highlight');
 
 const classMap = {
     h1: 'header'
@@ -14,6 +15,11 @@ const bindings = Object.keys(classMap).map(key => ({
 }));
 
 
+const appendString = `
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+`
+
+
 const convertFile = async (filename) => {
     await fs.readFile(filename, (err, data) => {
         if (err) {
@@ -22,10 +28,10 @@ const convertFile = async (filename) => {
         }
 
         const converter = new showdown.Converter({
-            extensions: [...bindings]
+            extensions: [...bindings, showdownHighlight({ pre: true })]
         });
         const html = converter.makeHtml(data.toString());
-        fs.writeFile(filename.replace('.md', '') + '.html', html, { flag: 'w+' }, err => {})
+        fs.writeFile(filename.replace('.md', '') + '.html', appendString + html, { flag: 'w+' }, err => {})
     });
 }
 
