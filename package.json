@@ -1,0 +1,24 @@
+{
+  "name": "markdown-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexRazor1337/markdown-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexRazor1337/markdown-blog/issues"
+  },
+  "homepage": "https://github.com/AlexRazor1337/markdown-blog#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "showdown": "^1.9.1"
+  }
+}
