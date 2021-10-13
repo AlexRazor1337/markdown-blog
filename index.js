@@ -8,9 +8,11 @@ const convertFile = async (filename) => {
             return;
         }
 
-        const converter = new showdown.Converter(),
-        const html = converter.makeHtml(data);
+        const converter = new showdown.Converter({strikethrough: true});
+        const html = converter.makeHtml(data.toString());
         fs.writeFile(filename.replace('.md', '') + '.html', html, { flag: 'w+' }, err => {})
     });
 }
 
+const args = process.argv;
+convertFile(args[2])
