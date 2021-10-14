@@ -23,7 +23,7 @@ const convertFile = async (filename) => {
             extensions: [...bindings, showdownHighlight({ pre: true })]
         });
 
-        const html = converter.makeHtml(data.toString());
+        const html = converter.makeHtml(data.toString()).replaceAll('.md"', '.html"');
         const template = fs.existsSync('template.html') ? fs.readFileSync('template.html').toString() : '<!DOCTYPE html><html lang="en"><body>[CONTENT GOES HERE]</body></html>';
         fs.writeFile(filename.replace('.md', '') + '.html', template.replace('[CONTENT GOES HERE]', html), { flag: 'w+' }, err => {})
     });
