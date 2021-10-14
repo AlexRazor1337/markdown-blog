@@ -104,6 +104,3 @@ dist
 .tern-port
 
 test/
-
-classmap.json
-template.html
