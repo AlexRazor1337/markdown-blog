@@ -47,3 +47,9 @@ Basic classmap file:
     "a": "link"
 }
 ```
+
+## Document format
+
+For this script to run files should be written according to few rules:  
+1. First file is an article title, should be marked with single hash symbol. Example: # Title  
+2. Third line is the date in the format dd-mm-yyyy.
