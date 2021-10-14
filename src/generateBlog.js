@@ -9,7 +9,8 @@ const generateBlog = async (path) => {
         if (file.includes('.md')) {
             const filePath = path + path_.sep + file;
             const data = fs.readFileSync(filePath);
-            const { birthtime } = fs.statSync(filePath)
+
+            const birthtime = new Date(data.toString().split('\n', 3).slice(-1)[0].split('-').reverse().join('-').replaceAll('**', ''))
             const title = data.toString().split('\n', 1)[0].replace('# ', '') + ` (${birthtime.toDateString()})`
 
             convertFile(filePath);
