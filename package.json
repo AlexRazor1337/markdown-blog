@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AlexRazor1337/markdown-blog#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "showdown": "^1.9.1",
     "showdown-highlight": "^2.1.8"
   }
