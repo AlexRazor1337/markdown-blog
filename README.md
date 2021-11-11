@@ -1,7 +1,7 @@
 ## What is it?
-I've created this node script to build a blog. It's used to convert **.md** files to **.html** and build articles list as main page.
+I've created this node script to build a blog. It's used to convert **.md** files to **.html** and build articles list as a main page.
 
-I don't see any actual reason to use it for anyone but whatever.
+I don't see any actual reason to use it for anyone except me but whatever.
 
 ## Usage
 
@@ -21,7 +21,7 @@ To convert whole folder:
 npm run build folder
 ```
 
-When processing a folder, it must have **blog** subfolder with all **.md** files. Script will generate **index.html** in the root folder.
+When processing a folder, it **must** have **blog** subfolder with all **.md** files. Script will generate **index.html** in the root folder.
 
 *Personally, I have all CSS and other additional files in the root folder and after converting it, just move it to my nginx site folder.*
 
@@ -51,5 +51,5 @@ Basic classmap file:
 ## Document format
 
 For this script to run files should be written according to few rules:  
-1. First file is an article title, should be marked with single hash symbol. Example: # Title  
+1. First line is an article title, should be marked with single hash symbol. Example: # Title  
 2. Third line is the date in the format dd-mm-yyyy.
